@@ -17,7 +17,7 @@ module.exports = (app) => {
       if (id > highest) {
         highest = id;
       }
-    }
+    };
 
     //add one to the highest number and set it to the new note:
     note.id = highest + 1;
@@ -32,9 +32,7 @@ module.exports = (app) => {
     
       console.log("Successfully added JSON element to the db.json file.");
       res.json(note);
-    
     });
-
   });
 
   app.get("/api/notes/:id", (req, res) => {
@@ -49,9 +47,7 @@ module.exports = (app) => {
       if (id === chosen_note_id) {
         res.json({"id": id, "title": title, "text": text});
       }
-
     }
-
   });
 
   app.delete("/api/notes/:id", (req, res) => {
@@ -71,11 +67,6 @@ module.exports = (app) => {
     
       console.log("Successfully removed JSON element from the db.json file.");
       res.json(notes);
-    
     });
-    
-
   });
-
-  
 };
